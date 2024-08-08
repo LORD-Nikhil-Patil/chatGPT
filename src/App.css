@@ -181,6 +181,14 @@ body {
   margin-top: 1.25rem;
 }
 
+[dir="ltr"] .left-0  { 
+  left: 0;
+} 
+
+[dir="ltr"] .right-0  { 
+  right: 0;
+} 
+
 .gap-2 {
   gap: .5rem;
 }
