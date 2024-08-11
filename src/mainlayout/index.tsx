@@ -1,11 +1,12 @@
 import "./styles.css";
 interface mainProps{
   setSidebarOpen: Function,
-  sidebarOpen: boolean
+  sidebarOpen: boolean,
+  screenWidth: number
 }
-function Main({setSidebarOpen, sidebarOpen}: mainProps) {
+function Main({setSidebarOpen, sidebarOpen, screenWidth}: mainProps) {
   return (
-    <main className="relative  h-screen w-full flex-1 overflow-auto transition-width">
+    <main className={`relative ${sidebarOpen && screenWidth > 900? "main-sidebar_open": "main-sidebar_close"} h-screen w-full flex-1 overflow-auto transition-width`}>
       <div
         role="presentation"
         className="flex h-full flex-col focus-visible:outline-0 snipcss0-0-0-1"
@@ -14,7 +15,7 @@ function Main({setSidebarOpen, sidebarOpen}: mainProps) {
           <div className="relative h-full snipcss0-2-2-3">
             <div className="absolute left-0 w-full right-0 snipcss0-3-3-4">
               <div className="sticky top-0 p-3 mb-1.5 flex items-center w-full justify-between z-10 h-14 font-semibold bg-token-main-surface-primary">
-                <button
+                {!sidebarOpen && <button
                   type="button"
                   className="sidebar-button inline-flex items-center justify-center rounded-md px-3 hover:text-token-text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white active:opacity-50"
                   onClick={()=>setSidebarOpen(!sidebarOpen)}
@@ -34,7 +35,7 @@ function Main({setSidebarOpen, sidebarOpen}: mainProps) {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                </button>
+                </button>}
                 <div className="flex items-center gap-0 overflow-hidden">
                   <div
                     id="radix-:r9:"

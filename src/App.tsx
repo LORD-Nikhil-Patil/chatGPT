@@ -20,7 +20,7 @@ function App() {
   return (
     <div className='flex '>
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
-      <Main setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen}/>
+      <Main setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} screenWidth={width}/>
     </div>
   )
 }

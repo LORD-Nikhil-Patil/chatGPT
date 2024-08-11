@@ -373,3 +373,11 @@ input {
     margin: 0; 
     padding: 0;
 } 
+
+.main-sidebar_open{
+  margin-left: 18rem;
+}
+
+.main-sidebar_close{
+  margin-left: 0rem;
+}
