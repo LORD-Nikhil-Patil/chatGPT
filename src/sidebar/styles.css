@@ -1,0 +1,45 @@
+.sidebar {
+    max-width: 18rem;
+}
+
+.sidebar-open {
+    display: grid !important;
+    position: absolute;
+    background-color: white;
+    z-index: 999;
+}
+
+.sidebar-close {
+    display: none !important;
+}
+
+.sidebar-button {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .sidebar-button{
+        display: block;
+    }
+    body .sidebar{
+        display: none;
+    }
+} 
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .sidebar-button{
+        display: block;
+    }
+    body .sidebar{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .sidebar-button{
+        display: block;
+    }
+    .sidebar{
+        display: grid;
+    }
+}

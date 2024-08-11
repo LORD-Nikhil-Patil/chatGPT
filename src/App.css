@@ -181,13 +181,13 @@ body {
   margin-top: 1.25rem;
 }
 
-[dir="ltr"] .left-0  { 
+[dir="ltr"] .left-0 {
   left: 0;
-} 
+}
 
-[dir="ltr"] .right-0  { 
+[dir="ltr"] .right-0 {
   right: 0;
-} 
+}
 
 .gap-2 {
   gap: .5rem;
@@ -230,13 +230,7 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
   .hover\:bg-token-sidebar-surface-secondary:hover {
-      background-color: var(--sidebar-surface-secondary);
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:hidden {
-      display: none;
+    background-color: var(--sidebar-surface-secondary);
   }
 }
 
@@ -268,6 +262,10 @@ button {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
 }
 
 .flex-row {
@@ -323,6 +321,22 @@ ol {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.ml-auto{
+  margin-left: auto;
+}
+
+.mr-auto{
+  margin-right: auto;
+}
+
+.left-auto{
+  left: auto;
+}
+
+.right-auto{
+  right: auto;
 }
 
 .border-token-border-light {
@@ -455,21 +469,21 @@ ol {
 
 @media (hover: hover) and (pointer: fine) {
   .hover\:text-token-text-primary:hover {
-      color: theme(colors.gray.950);
-      color: var(--text-primary);
+    color: theme(colors.gray.950);
+    color: var(--text-primary);
   }
 
   .hover\:text-token-text-primary:hover {
-      color: var(--text-primary);
+    color: var(--text-primary);
   }
 
   .group:hover .group-hover\:visible {
-      visibility: visible;
+    visibility: visible;
   }
 
   .group:hover .group-hover\:visible,
   .group\/dalle-image:hover .group-hover\/dalle-image\:visible {
-      visibility: visible;
+    visibility: visible;
   }
 }
 
@@ -531,7 +545,7 @@ h3 {
 
 @media (hover: hover) and (pointer: fine) {
   .group:hover .can-hover\:group-hover\:flex {
-      display: flex;
+    display: flex;
   }
 }
 
@@ -571,25 +585,22 @@ img {
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
 }
 
-.ltr\:right-0:where([dir=ltr],[dir=ltr] *) {
+.ltr\:right-0:where([dir=ltr], [dir=ltr] *) {
   right: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .group:hover .can-hover\:group-hover\:w-10 {
-      width: 2.5rem;
+    width: 2.5rem;
   }
 
   .group:hover .can-hover\:group-hover\:from-token-sidebar-surface-secondary {
-      --tw-gradient-from: var(--sidebar-surface-secondary) var(--tw-gradient-from-position);
-      --tw-gradient-to: hsla(0, 0%, 100%, 0) var(--tw-gradient-to-position);
-      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-from: var(--sidebar-surface-secondary) var(--tw-gradient-from-position);
+    --tw-gradient-to: hsla(0, 0%, 100%, 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 
   .group:hover .can-hover\:group-hover\:from-60\% {
-      --tw-gradient-from-position: 60%;
+    --tw-gradient-from-position: 60%;
   }
 }
-
-
-

@@ -1,7 +1,11 @@
 import "./styles.css";
-function Main() {
+interface mainProps{
+  setSidebarOpen: Function,
+  sidebarOpen: boolean
+}
+function Main({setSidebarOpen, sidebarOpen}: mainProps) {
   return (
-    <main className="relative  h-screen w-full flex-1 overflow-auto transition-width snipcss-HDJv1">
+    <main className="relative  h-screen w-full flex-1 overflow-auto transition-width">
       <div
         role="presentation"
         className="flex h-full flex-col focus-visible:outline-0 snipcss0-0-0-1"
@@ -9,9 +13,29 @@ function Main() {
         <div className="flex-1 overflow-hidden snipcss0-1-1-2">
           <div className="relative h-full snipcss0-2-2-3">
             <div className="absolute left-0 w-full right-0 snipcss0-3-3-4">
-              <div className="sticky top-0 p-3 mb-1.5 flex items-center w-full justify-between z-10 h-14 font-semibold bg-token-main-surface-primary snipcss0-4-4-5">
-                <div className="absolute start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 snipcss0-5-5-6"></div>
-                <div className="flex items-center gap-0 overflow-hidden snipcss0-5-5-7">
+              <div className="sticky top-0 p-3 mb-1.5 flex items-center w-full justify-between z-10 h-14 font-semibold bg-token-main-surface-primary">
+                <button
+                  type="button"
+                  className="sidebar-button inline-flex items-center justify-center rounded-md px-3 hover:text-token-text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white active:opacity-50"
+                  onClick={()=>setSidebarOpen(!sidebarOpen)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    className="icon-lg mx-2.5 text-token-text-secondary"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M3 8a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1m0 8a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+                <div className="flex items-center gap-0 overflow-hidden">
                   <div
                     id="radix-:r9:"
                     aria-haspopup="menu"
@@ -40,7 +64,7 @@ function Main() {
                     </svg>
                   </div>
                 </div>
-                <div className="flex gap-2 pr-1 snipcss0-5-5-12">
+                <div className="flex gap-2 pr-1">
                   <button
                     data-testid="profile-button"
                     className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-token-main-surface-secondary focus-visible:bg-token-main-surface-secondary focus-visible:outline-0 snipcss0-6-12-13"
@@ -69,17 +93,17 @@ function Main() {
                 </div>
               </div>
             </div>
-            <div className="flex h-full flex-col items-center justify-center text-token-text-primary snipcss0-3-3-17">
+            <div className="flex h-full flex-col items-center justify-center text-token-text-primary">
               <svg
                 width="41"
                 height="41"
                 viewBox="0 0 41 41"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 snipcss0-4-17-18"
+                className="h-12 w-12 "
                 role="img"
               >
-                <text x="-9999" y="-9999" className="snipcss0-5-18-19">
+                <text x="-9999" y="-9999">
                   ChatGPT
                 </text>
                 <path
@@ -87,107 +111,101 @@ function Main() {
                   fill="currentColor"
                 ></path>
               </svg>
-              <div className="snipcss0-4-17-20 style-JWa11" id="style-JWa11">
-                <div className="mx-3 mt-12 flex max-w-3xl flex-wrap items-stretch justify-center gap-4 snipcss0-5-20-21">
-                  <div className="flex max-w-3xl flex-wrap items-stretch justify-center gap-4 snipcss0-6-21-22">
-                    <button className="relative flex w-40 flex-col gap-2 rounded-2xl border border-token-border-light px-3 pb-4 pt-3 text-start align-top text-[15px] shadow-xxs transition enabled:hover:bg-token-main-surface-secondary disabled:cursor-not-allowed snipcss0-7-22-23">
+              <div style={{ opacity: "1" }}>
+                <div className="mx-3 mt-12 flex max-w-3xl flex-wrap items-stretch justify-center gap-4">
+                  <div className="flex max-w-3xl flex-wrap items-stretch justify-center gap-4">
+                    <button className="relative text-start flex w-40 flex-col gap-2 rounded-2xl border border-token-border-light px-3 pb-4 pt-3 text-start align-top text-[15px] shadow-xxs transition enabled:hover:bg-token-main-surface-secondary disabled:cursor-not-allowed">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         fill="none"
                         viewBox="0 0 24 24"
-                        className="icon-md snipcss0-8-23-24"
-                        style={{ color: "rgb(118, 208, 235)" }}
+                        className="icon-md"
+                        style={{ color: "rgb(203, 139, 208)" }}
                       >
                         <path
-                          fill="currentColor"
-                          fillRule="evenodd"
-                          d="M13.997 3.39A2.5 2.5 0 0 1 17.2 2.103l2.203.882a2.5 2.5 0 0 1 1.342 3.369L19.063 10H20a1 1 0 0 1 1 1v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-8a1 1 0 0 1 .992-1l-.149-.101-.03-.022c-1.254-.924-1.016-2.864.425-3.458l2.12-.874.724-2.176c.492-1.479 2.41-1.851 3.42-.665L11.99 4.45l1.521.01zm1.513 1.506a2 2 0 0 1 .461 2.618l-1.144 1.861v.045a1.3 1.3 0 0 0 .044.278 1 1 0 0 1 .047.302h1.942l2.07-4.485a.5.5 0 0 0-.268-.673l-2.203-.882a.5.5 0 0 0-.641.258zM12.889 10a3.3 3.3 0 0 1-.06-.499c-.01-.236-.004-.69.237-1.081l1.202-1.954-2.293-.016a2 2 0 0 1-1.51-.704L8.98 4l-.725 2.176A2 2 0 0 1 7.12 7.394L5 8.267l2.063 1.407c.129.087.23.2.303.326zM5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7zm4.5 2.5a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1"
-                          clipRule="evenodd"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 18V7h16v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2"
+                        ></path>
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4"
                         ></path>
                       </svg>
-                      <div className="line-clamp-3 max-w-full text-balance text-gray-600 dark:text-gray-500 break-word snipcss0-8-23-25">
-                        Fun fact about the Roman Empire
+                      <div className="line-clamp-3 max-w-full text-balance text-gray-600 dark:text-gray-500 break-word">
+                        Pick outfit to look good on camera
                       </div>
                     </button>
-                    <button className="relative flex w-40 flex-col gap-2 rounded-2xl border border-token-border-light px-3 pb-4 pt-3 text-start align-top text-[15px] shadow-xxs transition enabled:hover:bg-token-main-surface-secondary disabled:cursor-not-allowed snipcss0-7-22-26">
+                    <button className="relative flex w-40 flex-col gap-2 rounded-2xl border border-token-border-light px-3 pb-4 pt-3 text-start align-top text-[15px] shadow-xxs transition enabled:hover:bg-token-main-surface-secondary disabled:cursor-not-allowed">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="26"
                         height="24"
                         fill="none"
                         viewBox="0 0 26 24"
-                        className="icon-md snipcss0-8-26-27"
+                        className="icon-md"
                         style={{ color: "rgb(118, 208, 235)" }}
                       >
                         <path
                           fill="currentColor"
-                          fillRule="evenodd"
+                          fill-rule="evenodd"
                           d="M13.454 4.105a1 1 0 0 0-.909 0L2.987 8.982 2.077 7.2l9.56-4.877a3 3 0 0 1 2.726 0l9.56 4.877A1.98 1.98 0 0 1 25 9.22V15a1 1 0 1 1-2 0v-3.784l-2.033.995v4.094a3 3 0 0 1-1.578 2.642l-4.967 2.673a3 3 0 0 1-2.844 0l-4.967-2.673a3 3 0 0 1-1.578-2.642v-4.094l-2.927-1.433C.626 10.053.61 7.949 2.077 7.2l.91 1.782 9.573 4.689a1 1 0 0 0 .88 0L23 8.989v-.014zm-6.42 9.086v3.114a1 1 0 0 0 .525.88l4.967 2.674a1 1 0 0 0 .948 0l4.967-2.673a1 1 0 0 0 .526-.88V13.19l-4.647 2.276a3 3 0 0 1-2.64 0z"
-                          clipRule="evenodd"
+                          clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <div className="line-clamp-3 max-w-full text-balance text-gray-600 dark:text-gray-500 break-word snipcss0-8-26-28">
+                      <div className="line-clamp-3 max-w-full text-balance text-gray-600 dark:text-gray-500 break-word">
                         Quiz me on world capitals
                       </div>
                     </button>
                   </div>
-                  <div className="flex max-w-3xl flex-wrap items-stretch justify-center gap-4 snipcss0-6-21-29">
-                    <button className="relative flex w-40 flex-col gap-2 rounded-2xl border border-token-border-light px-3 pb-4 pt-3 text-start align-top text-[15px] shadow-xxs transition enabled:hover:bg-token-main-surface-secondary disabled:cursor-not-allowed snipcss0-7-29-30">
+                  <div className="sm-hidden flex max-w-3xl flex-wrap items-stretch justify-center gap-4">
+                    <button className="relative flex w-40 flex-col gap-2 rounded-2xl border border-token-border-light px-3 pb-4 pt-3 text-start align-top text-[15px] shadow-xxs transition enabled:hover:bg-token-main-surface-secondary disabled:cursor-not-allowed">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         fill="none"
                         viewBox="0 0 24 24"
-                        className="icon-md snipcss0-8-30-31"
-                        style={{ color: "rgb(203, 139, 208)" }}
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeWidth="2"
-                          d="M3 6h7M3 10h4"
-                        ></path>
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M13.428 17.572 20.5 10.5a2.828 2.828 0 1 0-4-4l-7.072 7.072a2 2 0 0 0-.547 1.022L8 19l4.406-.881a2 2 0 0 0 1.022-.547"
-                        ></path>
-                      </svg>
-                      <div className="line-clamp-3 max-w-full text-balance text-gray-600 dark:text-gray-500 break-word snipcss0-8-30-32">
-                        Content calendar for TikTok
-                      </div>
-                    </button>
-                    <button className="relative flex w-40 flex-col gap-2 rounded-2xl border border-token-border-light px-3 pb-4 pt-3 text-start align-top text-[15px] shadow-xxs transition enabled:hover:bg-token-main-surface-secondary disabled:cursor-not-allowed snipcss0-7-29-33">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        className="icon-md snipcss0-8-33-34"
+                        className="icon-md"
                         style={{ color: "rgb(226, 197, 65)" }}
                       >
                         <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="m9.65 13.026-3.287 1.19A2 2 0 0 1 3.8 13.027l-.342-.934.597-1.275L1.75 7.419l2.348-.85 2.564 1.484a2 2 0 0 0 1.689.15l8.512-3.083c.291-.106.603-.142.912-.107l2.833.325a1.842 1.842 0 0 1 .422 3.565l-5.276 1.911m.598-1.275L13 14.5l-2.817 1.02-.343-3.622"
-                        ></path>
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeWidth="2"
-                          d="M3 19h18"
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M12 3C8.415 3 5.5 5.923 5.5 9.538A6.54 6.54 0 0 0 8.425 15h7.15A6.54 6.54 0 0 0 18.5 9.538C18.5 5.923 15.585 3 12 3m2.865 14h-5.73v1h5.73zm-1.133 3h-3.464a2 2 0 0 0 3.464 0m-5.606 0a4.002 4.002 0 0 0 7.748 0 1 1 0 0 0 .991-1v-2.46A8.54 8.54 0 0 0 20.5 9.539C20.5 4.828 16.7 1 12 1S3.5 4.828 3.5 9.538a8.54 8.54 0 0 0 3.635 7.003V19a1 1 0 0 0 .991 1"
+                          clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <div className="line-clamp-3 max-w-full text-balance text-gray-600 dark:text-gray-500 break-word snipcss0-8-33-35">
-                        Plan a relaxing day
+                      <div className="line-clamp-3 max-w-full text-balance text-gray-600 dark:text-gray-500 break-word">
+                        What to do with kids' art
+                      </div>
+                    </button>
+                    <button className="relative flex w-40 flex-col gap-2 rounded-2xl border border-token-border-light px-3 pb-4 pt-3 text-start align-top text-[15px] shadow-xxs transition enabled:hover:bg-token-main-surface-secondary disabled:cursor-not-allowed">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        className="icon-md"
+                        style={{ color: "rgb(237, 98, 98)" }}
+                      >
+                        <path
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm1.293 4.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-2 2a1 1 0 0 1-1.414-1.414L8.586 12l-1.293-1.293a1 1 0 0 1 0-1.414M12 14a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <div className="line-clamp-3 max-w-full text-balance text-gray-600 dark:text-gray-500 break-word">
+                        Make me a personal webpage
                       </div>
                     </button>
                   </div>
@@ -264,7 +282,7 @@ function Main() {
                             dir="auto"
                             placeholder="Message ChatGPT"
                             className="m-0 resize-none border-0 bg-transparent px-0 text-token-text-primary focus:ring-0 focus-visible:ring-0 max-h-[25dvh] max-h-52"
-                            style={{height: "40px", overflowY: "hidden"}}
+                            style={{ height: "40px", overflowY: "hidden" }}
                           ></textarea>
                         </div>
                         <button
@@ -294,7 +312,7 @@ function Main() {
               </form>
             </div>
           </div>
-          <div className="relative px-2 py-2 text-center text-xs text-token-text-secondary md:px-[60px]">
+          <div className="relative px-2 py-2 flex justify-center jus text-xs text-token-text-secondary md:px-[60px]">
             <span>ChatGPT can make mistakes. Check important info.</span>
           </div>
         </div>

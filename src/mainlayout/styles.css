@@ -98,6 +98,10 @@
     margin-right: auto;
 } 
 
+.mt-12{
+  margin-top: 3rem;
+}
+
 .gap-4 { 
     gap: 1rem;
 } 
@@ -164,11 +168,22 @@
     --tw-shadow-colored: 0 0 2px 0 var(--tw-shadow-color),0 4px 6px 0 var(--tw-shadow-color);
 } 
 
+.p-1\.5 {
+  padding: .375rem;
+}
 
+.rounded-\[26px\] {
+  border-radius: 26px;
+}
 
-[dir="ltr"] .text-start  { 
+ .text-start  { 
     text-align: left;
-} 
+}
+
+.bg-\[\#f4f4f4\] {
+  --tw-bg-opacity: 1;
+  background-color: rgba(244, 244, 244, var(--tw-bg-opacity));
+}
 
 @media (hover: hover) and (pointer: fine){ 
   .enabled\:hover\:bg-token-main-surface-secondary:hover:enabled { 
